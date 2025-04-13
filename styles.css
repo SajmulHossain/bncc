@@ -1,11 +1,19 @@
 /* Reset and Base Styles */
 :root {
-    --primary-color: #003366; /* BNCC Navy Blue */
-    --secondary-color: #0066cc; /* BNCC Light Blue */
-    --accent-color: #ff9900; /* BNCC Gold */
-    --text-color: #333333;
-    --light-bg: #f5f5f5;
+    --army-green: #2D4739; /* Bangladesh Army Dark Green */
+    --olive-green: #4B5320; /* Military Olive */
+    --khaki: #BDB76B; /* Military Khaki */
+    --sand: #C5B358; /* Desert Sand */
+    --red-accent: #8B0000; /* Military Red */
+    --black: #000000;
     --white: #ffffff;
+    --light-khaki: #F4F1DE;
+    --primary-color: #1B3C73; /* BNCC Dark Blue */
+    --secondary-color: #2B5CAA; /* BNCC Medium Blue */
+    --accent-color: #C4A962; /* BNCC Gold */
+    --text-color: #333333;
+    --light-bg: #F5F7FA;
+    --dark-overlay: rgba(27, 60, 115, 0.9); /* Based on primary color */
 }
 
 * {
@@ -22,8 +30,8 @@ body {
 
 /* Header Styles */
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--army-green);
+    border-bottom: 2px solid var(--khaki);
     position: fixed;
     width: 100%;
     top: 0;
@@ -53,7 +61,10 @@ header {
 }
 
 .logo h1 {
-    color: var(--primary-color);
+    color: var(--khaki);
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -65,13 +76,15 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
+    color: var(--khaki);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--sand);
 }
 
 .language-selector select {
@@ -92,7 +105,7 @@ header {
 .hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://bncc.info/wp-content/uploads/2023/03/BNCC-1.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://bncc.info/wp-content/uploads/2023/03/BNCC-1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -111,7 +124,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0,51,102,0.9), rgba(0,102,204,0.8));
+    background: linear-gradient(135deg, rgba(45, 71, 57, 0.95), rgba(75, 83, 32, 0.85));
     z-index: 1;
 }
 
@@ -136,6 +149,10 @@ header {
     opacity: 0;
     transform: translateY(30px);
     animation: slideUp 0.8s ease forwards;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid var(--khaki);
+    padding-bottom: 1rem;
 }
 
 .hero-subtitle {
@@ -145,6 +162,8 @@ header {
     opacity: 0;
     transform: translateY(30px);
     animation: slideUp 0.8s ease forwards 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero-buttons {
@@ -165,22 +184,27 @@ header {
 }
 
 .primary-btn {
-    background-color: var(--accent-color);
-    color: var(--white);
-    border: 2px solid var(--accent-color);
+    background-color: var(--khaki);
+    color: var(--army-green);
+    border: 2px solid var(--khaki);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .primary-btn:hover {
     background-color: transparent;
-    color: var(--accent-color);
+    color: var(--khaki);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255,153,0,0.3);
+    box-shadow: 0 5px 15px rgba(189, 183, 107, 0.3);
 }
 
 .secondary-btn {
     background-color: transparent;
     color: var(--white);
-    border: 2px solid var(--white);
+    border: 2px solid var(--khaki);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .secondary-btn:hover {
@@ -208,9 +232,12 @@ header {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, var(--accent-color), #fff);
+    background: linear-gradient(45deg, var(--khaki), var(--sand));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
 }
 
 .stat-label {
@@ -231,7 +258,7 @@ header {
 .mouse {
     width: 30px;
     height: 50px;
-    border: 2px solid var(--white);
+    border: 2px solid var(--khaki);
     border-radius: 20px;
     position: relative;
     margin: 0 auto 1rem;
@@ -240,7 +267,7 @@ header {
 .wheel {
     width: 4px;
     height: 8px;
-    background-color: var(--white);
+    background-color: var(--khaki);
     border-radius: 2px;
     position: absolute;
     top: 8px;
@@ -252,8 +279,8 @@ header {
 .arrow-down {
     width: 20px;
     height: 20px;
-    border-right: 2px solid var(--white);
-    border-bottom: 2px solid var(--white);
+    border-right: 2px solid var(--khaki);
+    border-bottom: 2px solid var(--khaki);
     transform: rotate(45deg);
     margin: 0 auto;
     animation: bounce 2s infinite;
@@ -443,8 +470,24 @@ section {
 section h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--army-green);
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--khaki);
 }
 
 /* About Section */
@@ -471,19 +514,22 @@ section h2 {
 .activity-card {
     text-align: center;
     padding: 2rem;
-    background: var(--white);
+    background: linear-gradient(to bottom, var(--white), var(--light-khaki));
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    border: 1px solid var(--khaki);
 }
 
 .activity-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(45, 71, 57, 0.2);
+    border-color: var(--army-green);
 }
 
 .activity-card i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--army-green);
     margin-bottom: 1rem;
 }
 
@@ -501,21 +547,24 @@ section h2 {
 }
 
 .cadet-card {
-    background: var(--white);
+    background: linear-gradient(to bottom, var(--white), var(--light-khaki));
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    border: 1px solid var(--khaki);
 }
 
 .cadet-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(45, 71, 57, 0.2);
+    border-color: var(--army-green);
 }
 
 .cadet-card i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--army-green);
     margin-bottom: 1rem;
 }
 
@@ -537,17 +586,17 @@ section h2 {
 }
 
 .notice-item {
-    background: var(--white);
+    background: linear-gradient(to right, var(--light-khaki), var(--white));
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--army-green);
 }
 
 .notice-date {
-    color: var(--accent-color);
+    color: var(--red-accent);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .notice-item h3 {
@@ -565,7 +614,7 @@ section h2 {
 }
 
 .read-more:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 /* Registration Section */
@@ -582,21 +631,24 @@ section h2 {
 }
 
 .reg-card {
-    background: var(--white);
+    background: linear-gradient(to bottom, var(--white), var(--light-khaki));
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    border: 1px solid var(--khaki);
 }
 
 .reg-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(45, 71, 57, 0.2);
+    border-color: var(--army-green);
 }
 
 .reg-card i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--army-green);
     margin-bottom: 1rem;
 }
 
@@ -609,15 +661,20 @@ section h2 {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.8rem 2rem;
-    background-color: var(--primary-color);
+    background-color: var(--army-green);
     color: var(--white);
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    border: 2px solid var(--army-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .reg-button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--khaki);
+    border-color: var(--khaki);
+    color: var(--army-green);
 }
 
 /* Hall of Fame Section */
@@ -631,14 +688,23 @@ section h2 {
 .tab {
     padding: 0.5rem 2rem;
     cursor: pointer;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--army-green);
     border-radius: 4px;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .tab.active {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--army-green);
+    color: var(--khaki);
+}
+
+.tab:hover:not(.active) {
+    background-color: var(--khaki);
+    border-color: var(--khaki);
+    color: var(--army-green);
 }
 
 .fame-grid {
@@ -658,6 +724,7 @@ section h2 {
 
 .fame-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(27, 60, 115, 0.15);
 }
 
 .fame-card img {
@@ -680,7 +747,8 @@ section h2 {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background: var(--army-green);
+    border-top: 2px solid var(--khaki);
     color: var(--white);
     padding: 4rem 5% 2rem;
 }
@@ -696,6 +764,11 @@ footer {
 .footer-section h3 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    color: var(--khaki);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--khaki);
+    padding-bottom: 0.5rem;
 }
 
 .footer-section ul {
@@ -707,13 +780,14 @@ footer {
 }
 
 .footer-section a {
-    color: var(--white);
+    color: var(--light-khaki);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
 
 .footer-section a:hover {
-    opacity: 0.8;
+    color: var(--khaki);
+    opacity: 1;
 }
 
 .footer-bottom {
@@ -780,4 +854,21 @@ footer {
     .reg-card {
         margin-bottom: 1rem;
     }
+}
+
+/* Additional Military Elements */
+.military-border {
+    border: 2px solid var(--khaki);
+    position: relative;
+}
+
+.military-border::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid var(--khaki);
+    pointer-events: none;
 } 
